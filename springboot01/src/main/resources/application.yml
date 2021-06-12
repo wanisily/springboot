@@ -1,0 +1,28 @@
+server:
+  port: 8080
+
+test:
+#  map: {"key1":"value1","key2":"value2"}  这种方式也行
+  map:
+     key1: value1
+     key2: value2
+#  list: a,b,c,d,e,f  逗号隔开也行
+  list:
+    - a
+    - b
+    - c
+    - d
+    - e
+    - f
+  maps:
+    "key3": z,x,c,v,n
+    "key4":
+      - m
+      - b
+      - l
+      - k
+  lists: #三个map
+    - {"key5":"value5","key6":"value6"} #这里必须要加上 -
+    - key7: value7
+    - key8: value8
+  str: "nihao"
