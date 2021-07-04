@@ -3,6 +3,7 @@ package com.wanisily;
 import static org.junit.Assert.assertTrue;
 
 import com.alibaba.fastjson.JSON;
+import com.wanisily.config.PasswordConfig;
 import com.wanisily.prop.People;
 import com.wanisily.prop.Properties;
 import com.wanisily.prop.PropertiesYml;
@@ -10,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import java.util.Map;
@@ -29,6 +31,12 @@ public class SpringbootDemoApplicationTest {
     @Autowired
     private People people;
 
+    @Autowired
+    private BCryptPasswordEncoder bCryptPasswordEncoder;
+
+    @Autowired
+    private PasswordConfig passwordConfig;
+
     @Test
     public void shouldAnswerWithTrue() {
 
@@ -43,12 +51,17 @@ public class SpringbootDemoApplicationTest {
 
     @Test
     public void testPro(){
-        System.out.println(JSON.toJSONString(properties));
+        System.err.println(JSON.toJSONString(properties));
     }
 
     @Test
     public void testPeo(){
-        System.out.println(JSON.toJSONString(people));
+        System.err.println(JSON.toJSONString(people));
     }
 
+    @Test
+    public void testPassword(){
+        System.err.println(bCryptPasswordEncoder  + "=======err=====");
+        passwordConfig.get();
+    }
 }

@@ -15,14 +15,26 @@ test:
     - e
     - f
   maps:
-    "key3": z,x,c,v,n
-    "key4":
-      - m
-      - b
-      - l
-      - k
+    key3: z,x,c,v,n
+    key4:
+       - m
+       - b
+       - l
+       - k
   lists: #三个map
-    - {"key5":"value5","key6":"value6"} #这里必须要加上 -
-    - key7: value7
-    - key8: value8
+    - {"key5":"value5","key6":"value6"} #这里必须要加上 - ，这个代表一个map
+    - key7: value7 #这个代表list中的一个map
+    - key8: value8 #这个代表list中的一个map
   str: "nihao"
+
+
+logging:
+  level:
+    root: INFO
+spring:
+  security:
+    user:
+      name: user
+      password: "$2a$10$q89xjTup1uXoS4AoGbb0DOSgJBqS9taubwvC3JbEsGgBJbAXWazF2"
+      roles: admin
+
