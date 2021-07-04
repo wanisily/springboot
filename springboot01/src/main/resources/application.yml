@@ -38,3 +38,21 @@ spring:
       password: "$2a$10$q89xjTup1uXoS4AoGbb0DOSgJBqS9taubwvC3JbEsGgBJbAXWazF2"
       roles: admin
 
+person:
+  username: zhangsan
+  age: 18
+  boss: false
+  birthday: 2017-12-12
+  graduateTime: 2019/12/01 23:23:23
+  map: {k1: 1, k2: 2}
+  list: [1,2,5,6]
+  list1: 2,3,4,5,
+  list2:
+    - 1
+    - 2
+    - 3
+  dog:
+     name: dahuang
+     age: ${person.age}
+     alias: xiao_${person.dog.name}
+

@@ -11,6 +11,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.env.Environment;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.test.context.junit4.SpringRunner;
 
@@ -36,6 +37,10 @@ public class SpringbootDemoApplicationTest {
 
     @Autowired
     private PasswordConfig passwordConfig;
+
+    @Autowired
+    private Environment env;
+
 
     @Test
     public void shouldAnswerWithTrue() {
@@ -63,5 +68,13 @@ public class SpringbootDemoApplicationTest {
     public void testPassword(){
         System.err.println(bCryptPasswordEncoder  + "=======err=====");
         passwordConfig.get();
+    }
+
+    @Test
+    public void testEnv(){
+        System.err.println(env.getProperty("person.username"));
+        System.err.println(env.getProperty("person.age"));
+        System.err.println(env.getProperty("person.boss"));
+        System.err.println(env.getProperty("person.ere00") + "==========================");
     }
 }
