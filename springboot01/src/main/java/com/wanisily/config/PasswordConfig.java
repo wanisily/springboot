@@ -20,4 +20,6 @@ public class PasswordConfig {
         BCryptPasswordEncoder bCryptPasswordEncoder = passwordEncoder();
     }
 
+
+
 }

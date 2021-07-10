@@ -38,6 +38,12 @@ spring:
       password: "$2a$10$q89xjTup1uXoS4AoGbb0DOSgJBqS9taubwvC3JbEsGgBJbAXWazF2"
       roles: admin
 
+
+
+devtools:
+  restart:
+    exclude: static/**,public/**
+
 person:
   username: zhangsan
   age: 18
@@ -55,4 +61,5 @@ person:
      name: dahuang
      age: ${person.age}
      alias: xiao_${person.dog.name}
+
 
