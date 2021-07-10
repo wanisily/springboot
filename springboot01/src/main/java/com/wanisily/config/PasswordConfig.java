@@ -11,7 +11,7 @@ public class PasswordConfig {
     @Bean
     public  BCryptPasswordEncoder passwordEncoder(){
         BCryptPasswordEncoder bCryptPasswordEncoder = new BCryptPasswordEncoder();
-        System.out.println(bCryptPasswordEncoder+ "==========+++++====");
+//        System.out.println(bCryptPasswordEncoder+ "==========+++++====");
         return bCryptPasswordEncoder;
     }
 

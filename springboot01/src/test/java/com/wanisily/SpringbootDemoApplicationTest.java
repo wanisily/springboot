@@ -1,8 +1,11 @@
 package com.wanisily;
 
 import com.alibaba.fastjson.JSON;
+import com.wanisily.annotations.MyEnableAppConfigAnnotation;
+import com.wanisily.config.AppConfig;
 import com.wanisily.config.PasswordConfig;
 import com.wanisily.domain.Pig;
+import com.wanisily.imports.SpringStartSelector;
 import com.wanisily.prop.People;
 import com.wanisily.prop.Properties;
 import com.wanisily.prop.PropertiesYml;
@@ -25,8 +28,8 @@ import java.util.Map;
  */
 @RunWith(SpringRunner.class)
 @SpringBootTest
-@Import(HelloServiceImpl.class)
-
+@Import({HelloServiceImpl.class/*, SpringStartSelector.class*/})
+@MyEnableAppConfigAnnotation
 public class SpringbootDemoApplicationTest {
     @Autowired
     private PropertiesYml propertiesYml;
@@ -55,8 +58,17 @@ public class SpringbootDemoApplicationTest {
     @Autowired
     private Pig pig;
 
+    /**
+     * 通过@Import注解注入
+     */
     @Autowired
     private HelloServiceImpl helloServiceImpl;
+
+    /**
+     * 通过@Import注解注入
+     */
+    @Autowired
+    private AppConfig appConfig;
 
     @Test
     public void shouldAnswerWithTrue() {
@@ -128,5 +140,10 @@ public class SpringbootDemoApplicationTest {
     public void TestBeanConfigProperties(){
         System.err.println(helloServiceImpl  + "===============");
         System.out.println(JSON.toJSONString(pig));
+    }
+
+    @Test
+    public void test(){
+        System.out.println(appConfig.getClass()   +"  ============");
     }
 }
