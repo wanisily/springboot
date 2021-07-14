@@ -2,6 +2,7 @@ package com.wanisily;
 
 import com.alibaba.fastjson.JSON;
 import com.wanisily.annotations.MyEnableAppConfigAnnotation;
+import com.wanisily.condition.MyConditionBean;
 import com.wanisily.config.AppConfig;
 import com.wanisily.config.PasswordConfig;
 import com.wanisily.domain.Pig;
@@ -70,6 +71,9 @@ public class SpringbootDemoApplicationTest {
     @Autowired
     private AppConfig appConfig;
 
+    @Autowired
+    private MyConditionBean myConditionBean;
+
     @Test
     public void shouldAnswerWithTrue() {
 
@@ -108,7 +112,7 @@ public class SpringbootDemoApplicationTest {
      * 测试Env
      */
     @Test
-    public void testEnv(){
+    public void tsaestEnv(){
         System.out.println(JSON.toJSONString(env));
         /*System.err.println(env.getProperty("person.username"));
         System.err.println(env.getProperty("person.age"));
@@ -144,6 +148,7 @@ public class SpringbootDemoApplicationTest {
 
     @Test
     public void test(){
+        System.out.println(myConditionBean + "====================>>>>>>>>>>>....");
         System.out.println(appConfig.getClass()   +"  ============");
     }
 }

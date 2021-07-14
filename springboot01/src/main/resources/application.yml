@@ -63,3 +63,5 @@ person:
      alias: xiao_${person.dog.name}
 
 
+enable:
+  mycondition: true
