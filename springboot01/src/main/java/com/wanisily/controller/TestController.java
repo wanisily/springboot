@@ -23,4 +23,8 @@ public class TestController {
         return "deveString，你好";
     }
 
+
+    public static void main(String[] args) {
+
+    }
 }
